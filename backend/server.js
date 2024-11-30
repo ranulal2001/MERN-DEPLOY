@@ -1,6 +1,7 @@
 import app from "./app.js";
 // import cloudinary from "cloudinary";
 import path from 'path';
+import express from "express";
 
 
 import { fileURLToPath } from 'url';
@@ -17,7 +18,7 @@ const __dirname = dirname(__filename);
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", function (req,res){
-  res.sendFile(path.join(__dirname,"./client/build/index.html"));
+  res.sendFile(path.join(__dirname,"../frontend/dist/index.html"));
 });
 
 
